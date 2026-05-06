@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Symptom Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pet Selection Screen -->
+        <div id="petSelectionScreen" class="screen active">
+            <div class="pet-selection-box">
+                <h1>Pet Symptom Checker</h1>
+                <p>Select your pet type to begin</p>
+                <div class="pet-buttons">
+                    <button class="pet-btn" data-pet="dog">
+                        <span class="pet-icon">🐕</span>
+                        <span>Dog</span>
+                    </button>
+                    <button class="pet-btn" data-pet="cat">
+                        <span class="pet-icon">🐈</span>
+                        <span>Cat</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Symptom Checker Screen -->
+        <div id="checkerScreen" class="screen">
+            <div class="header">
+                <button id="backBtn" class="back-btn">← Back</button>
+                <h1 id="petTitle">Pet Symptom Checker</h1>
+            </div>
+
+            <div class="main-content">
+                <!-- Selected Symptoms Display -->
+                <div class="selected-symptoms-section">
+                    <h2>Selected Symptoms</h2>
+                    <div id="selectedSymptomsList" class="symptoms-list">
+                        <p class="empty-message">No symptoms selected yet</p>
+                    </div>
+                </div>
+
+                <!-- Search and Symptom Selection -->
+                <div class="search-section">
+                    <input 
+                        type="text" 
+                        id="symptomSearch" 
+                        placeholder="Search symptoms..." 
+                        class="search-input"
+                    >
+                    <div id="symptomsList" class="symptoms-database"></div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <h2>Possible Conditions</h2>
+                <div id="conditionsList" class="conditions-list"></div>
+                <button id="clearResultsBtn" class="clear-btn">Clear Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
